@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIENVENIDO</title>
+    <link rel="stylesheet" href="/bienvenido.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Dosis:wght@200;300&family=Lobster&family=Splash&display=swap" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Dancing+Script&family=Dosis:wght@200;300&family=Lobster&family=Splash&display=swap');
+  </style>
+</head>
+<body>
+    <H1 class="texto"> Ya formas parte de nuestra comunidad !!!!</H1>
+    <button id="salir"> SALIR</button>
+
+    <H1 class="estilo"> Bienvenido</H1>
+   
+    <p class="estilo2">La vida comienza despues de un buen café</p>
+    <a href="/practica.html" class="iniciar" >Iniciar</a>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCruEnURQu6iZlwT8UGkWMBSZggnZXZle0",
+          authDomain: "clientes-7494b.firebaseapp.com",
+          projectId: "clientes-7494b",
+          storageBucket: "clientes-7494b.appspot.com",
+          messagingSenderId: "545944468950",
+          appId: "1:545944468950:web:66d4e706e7812462703877"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById("salir").addEventListener("click",function(){
+            signOut(auth).then(() => {
+                window.open("/index.html")
+  // Sign-out successful.
+}).catch((error) => {
+  // An error happened.
+});
+})
+</script>
+    
+
+
+    
+</body>
+</html>

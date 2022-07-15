@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Cuenta de Usuaros</title>
+    <link rel ="stylesheet" href="/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+
+        
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Dosis:wght@200&display=swap" rel="stylesheet">
+
+
+<style>
+
+</style>
+   
+
+</head>
+<body>
+  <header>
+    <div class="encabezado" >
+      <div class="foto"   data-aos="zoom-in-down">
+      <img src="/imagenes/OSO XD.png"  height="200px" width=""></div>
+       
+  </div>
+  </header>
+  
+
+  
+    <h1 class="titulo"> Crear una cuenta </h1>
+    <div class="parte1">
+    <p class="encabezado2">   Visitanos para ser parte de esta gran familia,ingresando  tus datos para conocer novedades. </p>
+    <p class="correo"> Escriba su correo</p>
+    <input type="email"  name="" id="email">
+    <p class="contraseña"> Esciba su contraseña</p>
+    <input type="password" name="" id="pass">
+    <button id="registrar"> REGISTRARSE</button> 
+  </div>
+    
+    
+    <h1 class="titulo2">Iniciar sesion</h1> 
+    <div class="parte2">
+    <P> Si ya te registraste ingresa tus datos para acceder a la pagina.</P>
+    <p> Escriba su correo</p>
+    <input type="email"  name="" id="email1">
+    <p> Esciba su contraseña</p>
+    <input type="password" name="" id="pass1">
+    <button id="iniciar"> INICIAR</button> 
+    
+  </div>
+    <script type="module">
+      
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js";
+        //import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyCruEnURQu6iZlwT8UGkWMBSZggnZXZle0",
+        authDomain: "clientes-7494b.firebaseapp.com",
+        projectId: "clientes-7494b",
+        storageBucket: "clientes-7494b.appspot.com",
+        messagingSenderId: "545944468950",
+        appId: "1:545944468950:web:66d4e706e7812462703877"
+        };
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        //creamos el evento para q funcione el boton REGISTRASE
+        document.getElementById("registrar").addEventListener("click",function(){
+            const email=document.getElementById("email").value;
+            const password=document.getElementById("pass").value;
+
+                createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // se guarda la informacion
+        const user = userCredential.user;
+        console.log("cuenta creada")
+        // ...
+    })
+    .catch((error) => {
+        //Aparesera un error 
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode +errorMessage)
+        // ..
+    });
+})
+////creamos el evento para q funcione el boton INICIAR SESIÓN
+document.getElementById("iniciar").addEventListener("click",function(){
+    //
+    const email1= document.getElementById("email1").value;
+    const pass1= document.getElementById("pass1").value;
+    
+    signInWithEmailAndPassword(auth, email1, pass1)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    window.open("/bienvenido.html","Oficial|")
+    //console.log("Tu cuenta existe")
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log("No has llenado correctamente")
+  });
+
+
+
+
+})
+        </script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+          AOS.init();
+        </script>
+
+<footer class="footer">
+</div>
+   
+<div class="logos">
+    <p> Visitanos en:</p>
+ <img src="/imagenes/facebook.png" width="50px" height="45px">
+<img src="/imagenes/gorjeo.png" width="50px" height="45px">
+
+ <img src="/imagenes/instagram (1).png" width="50px" height="45px">
+ <img src="/imagenes/youtube.png" width="50px" height="45px">
+</div>
+
+
+
+<p class="footer">Página Creada por el estudiante de Certus Fernando Ramiro Pinedo Bejar</p>
+
+</div>
+<div>
+<img  class="oso" src="/imagenes/OSO XD.png" width="150px" height="100px">
+</div>
+
+    
+</footer>
+
+</body>
+</html>

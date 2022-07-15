@@ -1,0 +1,37 @@
+html{
+    background: url(/imagenes/borroso.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.estilo{
+    font-family: 'Splash', cursive;
+    display: block;
+    padding: 1px 500px;
+    font-size: 80px;
+}
+.estilo2{
+    font-family: 'Dancing Script', cursive;
+    display: block;
+    padding: 0px 350px 0px 380px;
+    font-size: 40px;
+}
+
+h1{
+    display: block;
+    padding: 1px 480px;
+    font-size: 40px;
+}
+.iniciar{
+    text-decoration: none;
+    display: block;
+    padding: 0px 200px 0px 620px;
+    font-size: 40px;
+    color: brown;
+
+}
+.texto{ display: block;
+    padding: 0px 280px 0px 300px;
+    font-size: 50px;
+color: brown;
+font-family: 'Dancing Script', cursive
+}
